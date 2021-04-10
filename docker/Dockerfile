@@ -22,11 +22,11 @@ RUN useradd -m -u 1000 -U -s /bin/sh -d /hydra-dx-node hydra && \
     mkdir -p /hydra-dx-node/.local/share && \
     mkdir /data && \
     chown -R hydra:hydra /data && \
-    ln -s /data /hydra-dx-node/.local/share/polkadot && \
+    ln -s /data /hydra-dx-node/.local/share/hydra-dx && \
     rm -rf /usr/bin /usr/sbin
 
 USER hydra
-EXPOSE 30333 9933 9944
+EXPOSE 30333
 VOLUME ["/data"]
 
 CMD ["/usr/local/bin/hydra-dx"]
