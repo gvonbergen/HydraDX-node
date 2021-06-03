@@ -1,0 +1,1 @@
+kubectl -n hydradx patch statefulset hydradx-node --type='json' -p='[{"op": "replace", "path": "/spec/template/spec/containers/0/image", "value":"gvonbergen/hydradx-node:5.0.0"}]'

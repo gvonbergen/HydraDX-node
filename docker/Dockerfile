@@ -23,6 +23,10 @@ RUN useradd -m -u 1000 -U -s /bin/sh -d /hydra-dx-node hydra && \
     mkdir /data && \
     chown -R hydra:hydra /data && \
     ln -s /data /hydra-dx-node/.local/share/hydra-dx && \
+    apt-get update && apt-get install -y \
+    curl && \
+    cp /usr/bin/curl /usr/local/bin && \
+    rm -rf /var/lib/apt/lists/* && \
     rm -rf /usr/bin /usr/sbin
 
 USER hydra
